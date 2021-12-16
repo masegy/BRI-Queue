@@ -17,12 +17,12 @@ axios.defaults.baseURL = "http://tranquil-island-89451.herokuapp.com";
 const PrivateRoute = (props) => {
   const token = localStorage.getItem("token");
   const history = useHistory();
-  if (token !== null && token !== undefined) {
-    history.push("/beranda");
-    return <Route exact={true} path={props.path} component={props.component} />;
-  } else {
-    return <Redirect to="/" />;
-  }
+//   if (token !== null && token !== undefined) {
+//     history.push("/beranda");
+//     return <Route exact={true} path={props.path} component={props.component} />;
+//   } else {
+//     return <Redirect to="/" />;
+//   }
 };
 
 function App() {
