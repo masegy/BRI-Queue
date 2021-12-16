@@ -17,12 +17,12 @@ axios.defaults.baseURL = "http://tranquil-island-89451.herokuapp.com";
 const PrivateRoute = (props) => {
   const token = localStorage.getItem("token");
   const history = useHistory();
-//   if (token !== null && token !== undefined) {
-//     history.push("/beranda");
-//     return <Route exact={true} path={props.path} component={props.component} />;
-//   } else {
-//     return <Redirect to="/" />;
-//   }
+  if (token !== null && token !== undefined) {
+    history.push("/beranda");
+    return <Route exact={true} path={props.path} component={props.component} />;
+  } else {
+    return <Redirect to="/" />;
+  }
 };
 
 function App() {
@@ -30,16 +30,16 @@ function App() {
     <div className="App">
       <Router>
         <Route exact path="/" component={LoginPage}></Route>
-        <PrivateRoute path="/beranda" component={BerandaPage}></PrivateRoute>
-        <PrivateRoute
+        <Route path="/beranda" component={BerandaPage}></Route>
+        <Route
           path="/booking-antrian"
           component={BookingPage}
-        ></PrivateRoute>
-        <PrivateRoute path="/daftar-bank" component={DaftarBank}></PrivateRoute>
-        <PrivateRoute
+        ></Route>
+        <Route path="/daftar-bank" component={DaftarBank}></Route>
+        <Route
           path="/detail-antrian-bank/:id"
           component={AntrianBankPage}
-        ></PrivateRoute>
+        ></Route>
       </Router>
     </div>
   );
