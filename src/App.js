@@ -13,7 +13,7 @@ import AntrianBankPage from "pages/AntrianBankPage";
 import DaftarBank from "pages/DaftarBank";
 import axios from "axios";
 
-axios.defaults.baseURL = "http://backend-b-queue-management.digitalent.rakamin.com/api/";
+axios.defaults.baseURL = "http://tranquil-island-89451.herokuapp.com/test/";
 const PrivateRoute = (props) => {
   const token = localStorage.getItem("token");
   const history = useHistory();
